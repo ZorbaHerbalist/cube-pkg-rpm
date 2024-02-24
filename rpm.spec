@@ -21,7 +21,8 @@ The RPM Package Manager (RPM).
 CPPFLAGS="-I/usr/local/include" \
 LDFLAGS="-L/usr/local/lib" \
 LIBS="-lgetline -lz -lm" \
-./configure --without-archive
+./configure \
+	--without-archive
 gmake
 
 %install
