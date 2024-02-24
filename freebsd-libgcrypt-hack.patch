@@ -1,0 +1,12 @@
+diff -Nru rpm-4.17.1.1.orig/rpmio/digest_libgcrypt.c rpm-4.17.1.1/rpmio/digest_libgcrypt.c
+--- rpm-4.17.1.1.orig/rpmio/digest_libgcrypt.c	Fri Sep  2 12:12:50 2022
++++ rpm-4.17.1.1/rpmio/digest_libgcrypt.c	Sat Feb 24 03:47:48 2024
+@@ -59,7 +59,7 @@
+     case PGPHASHALGO_SHA1:
+ 	return GCRY_MD_SHA1;
+     case PGPHASHALGO_SHA224:
+-	return GCRY_MD_SHA224;
++	return GCRY_MD_SHA256;
+     case PGPHASHALGO_SHA256:
+ 	return GCRY_MD_SHA256;
+     case PGPHASHALGO_SHA384:

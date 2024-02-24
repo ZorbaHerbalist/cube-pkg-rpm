@@ -1,0 +1,23 @@
+diff -Nru rpm-4.17.1.1.orig/misc/fts.c rpm-4.17.1.1/misc/fts.c
+--- rpm-4.17.1.1.orig/misc/fts.c	Fri Sep  2 12:12:50 2022
++++ rpm-4.17.1.1/misc/fts.c	Sat Feb 24 02:34:14 2024
+@@ -32,7 +32,7 @@
+ #endif /* LIBC_SCCS and not lint */
+ 
+ /* Conditional to set up proper fstat64 implementation */
+-#if defined(hpux) || defined(sun)
++#if defined(hpux) || defined(sun) || defined(__FreeBSD__)
+ #   define FTS_FSTAT64(_fd, _sbp)   fstat((_fd), (_sbp))
+ #else
+ #   define FTS_FSTAT64(_fd, _sbp)   fstat64((_fd), (_sbp))
+@@ -63,6 +63,10 @@
+ #endif
+ #if defined(__APPLE__)
+ #   define __errno_location()	(__error())
++#endif
++#if defined(__FreeBSD__)
++#   define __errno_location() 	(&errno)
++#   define stat64		stat
+ #endif
+ 
+ #include "system.h"
