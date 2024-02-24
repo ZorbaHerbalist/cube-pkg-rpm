@@ -18,7 +18,10 @@ The RPM Package Manager (RPM).
 %patch2 -p1
 
 %build
-CPPFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" LIBS="-lgetline -lz -lm" ./configure --without-archive
+CPPFLAGS="-I/usr/local/include" \
+LDFLAGS="-L/usr/local/lib" \
+LIBS="-lgetline -lz -lm" \
+./configure --without-archive
 gmake
 
 %install
