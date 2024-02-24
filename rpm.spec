@@ -1,4 +1,4 @@
-Summary: TheRPM package management system
+Summary: The RPM package management system
 Name: rpm
 Version: 4.17.1.1
 Release: 1
